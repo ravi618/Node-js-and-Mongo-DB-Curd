@@ -1,0 +1,104 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>USerName/LOGIN- Travel</title>
+
+	<link rel="stylesheet" href="assets/plugins/bootstrap-4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+</head>
+<body>
+ 
+ <section data-position="register">
+<h1>here you see all the users<h1>
+</br>
+<h2>Contact_list</h2>
+
+							 
+					
+					<table>
+					<tr>
+					<th>name</th>
+					<th>email</th>
+					<th>password</th>
+					<th>phone</th>
+					
+					</tr>
+					</br>
+  <% for(var i=0; i<register.length; i++) {%>
+     <tr>
+       <td><%= register[i].name%></td>
+	    <td><%= register[i].email%></td>
+       <td><%= register[i].password %></td>
+	    <td><%= register[i].phone%></td>
+      
+     </tr>
+     <% } %>
+	 </table>
+			</section>
+			
+			<p>If user name is not added in the list</p>
+			<button class="btn btn-default"><a href="/UserList">Add Information</a></button>
+			
+		</br>			
+//to delete the contact
+<section data-position="delete-User">
+      <div>
+        <h2>Remove !</h2>
+        <p>
+          EnterID and click on the delete button.
+		</p>
+		<input type="text" placeholder="id" name="actionid" id="actionid" />
+		
+        <button id="delete-button">Delete</button>
+      </div>
+      <div id="message"></div>
+    </section>
+	
+	
+	
+	
+	
+	
+	<section  data-position="update-User" >
+			  <div>
+					<h2>UPDATED contact!</h2>
+					
+					
+				
+					<p>
+						<input type="text" placeholder="Enter username" name="username" id="username"><br>
+						<input type="text" placeholder="password" name="password" id="password"><br>
+						
+					
+					</p>
+
+					<button id="update-button">Update</button>
+			  </div>
+					<div id="message"></div>
+		</section>
+		
+		<script src="/main.js"></script>
+</body>
+</html>
